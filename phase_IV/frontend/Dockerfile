@@ -1,17 +1,13 @@
-# Pehli line ko 20 karein (Yahan build hota hai)
-FROM node:20-slim AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
-RUN apt-get update && apt-get install -y python3 make g++
-
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --only=production
 
 COPY . .
 RUN npm run build
 
-# Isay bhi 20 hi rehne dein
-FROM node:20-alpine
+FROM node:18-alpine
 WORKDIR /app
 
 # Copy production dependencies from builder stage
