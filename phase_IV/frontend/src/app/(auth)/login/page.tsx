@@ -38,22 +38,25 @@ export default function LoginPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      const res = await api.post('/auth/login', values);
-      const token = res.data.access_token || res.data.token;
-      if (token) {
-          login(token);
-      } else {
-          setError('Invalid response from server');
-      }
-    } catch (err: any) {
-        if (err.response) {
-            setError(err.response.data.detail || 'Login failed');
-        } else {
-            setError('Login failed');
-        }
-    }
+  try {
+    setError('');
+    
+    // Backend ko 'username' chahiye, hum 'email' ko wahan map kar rahe hain
+    const response = await api.post('/auth/login', {
+      username: values.email, 
+      password: values.password,
+    });
+
+    const { access_token } = response.data;
+    login(access_token);
+  } catch (err: any) {
+    // React Error #31 Fix: Sirf string bhejni hai, poora object nahi
+    const message = err.response?.data?.detail?.[0]?.msg || 
+                    err.response?.data?.message || 
+                    "Invalid email or password";
+    setError(typeof message === 'object' ? JSON.stringify(message) : message);
   }
+}
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#fcfaff] p-4">
