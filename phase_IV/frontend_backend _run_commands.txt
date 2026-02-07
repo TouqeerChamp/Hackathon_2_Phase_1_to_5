@@ -1,0 +1,24 @@
+# 1. Apne main optimized folder mein jayein
+cd ~/hackathon_final/frontend
+
+# 2. Server start karein
+npm run dev
+
+
+
+
+
+cd ~/hackathon_final/backend
+2. Virtual Environment banayein aur Active karein:
+
+# Environment banana
+python3 -m venv .venv
+
+# Active karna
+source .venv/bin/activate
+3. Requirements Install karein:
+
+pip install -r requirements.txt
+4. Backend Server Run karein:
+
+uvicorn src.main:app --reload

@@ -1,0 +1,29 @@
+# FastAPI and server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Database
+sqlmodel>=0.0.19
+psycopg2-binary>=2.9.9
+
+# Authentication
+python-jose[cryptography]>=3.3.3
+passlib[bcrypt]>=1.7.4
+bcrypt==3.2.2
+
+# Pydantic v2
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Utilities
+python-multipart>=0.0.6
+
+# AI/LLM (Phase III)
+openai>=1.0.0
+
+# MCP Server (Phase III)
+mcp>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0

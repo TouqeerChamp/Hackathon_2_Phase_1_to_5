@@ -1,0 +1,22 @@
+# Environment variables
+env:
+  DATABASE_URL: "sqlite:///./test.db"
+  JWT_SECRET: "victory_secret_key_2026"
+
+# Backend configuration
+backend:
+  port: 8000
+  image: todo-backend:v1
+  imagePullPolicy: IfNotPresent
+  replicaCount: 1
+
+# Frontend configuration
+frontend:
+  port: 3000
+  image: todo-frontend:v1
+  imagePullPolicy: IfNotPresent
+  replicaCount: 1
+
+# Service configuration
+service:
+  type: LoadBalancer
