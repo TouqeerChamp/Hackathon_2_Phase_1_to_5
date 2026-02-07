@@ -39,7 +39,7 @@ export default function RegisterPage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await api.post('/api/v1/auth/register', values);
+      await api.post('/auth/register', values);
       router.push('/login');
     } catch (err: any) {
         if (err.response) {

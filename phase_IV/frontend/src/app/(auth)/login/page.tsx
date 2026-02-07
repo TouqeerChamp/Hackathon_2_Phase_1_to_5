@@ -39,7 +39,7 @@ export default function LoginPage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await api.post('/api/v1/auth/login', values);
+      const res = await api.post('/auth/login', values);
       const token = res.data.access_token || res.data.token;
       if (token) {
           login(token);
