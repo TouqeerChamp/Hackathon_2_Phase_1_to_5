@@ -38,24 +38,21 @@ export default function RegisterPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      setError('');
-      // Backend ko 'username' chahiye hota hai FastAPI mein
-      await api.post('/auth/register', {
-        username: values.email,
-        password: values.password
-      });
-      router.push('/login');
-    } catch (err: any) {
-      // React Error #31 Fix: Sirf pehla error message uthao
-      const detail = err.response?.data?.detail;
-      const message = Array.isArray(detail) 
-        ? detail[0].msg 
-        : (typeof detail === 'string' ? detail : 'Registration failed');
-      
-      setError(message);
-    }
+  try {
+    setError('');
+    // Backend 'username' mangta hai
+    await api.post('/auth/register', {
+      username: values.email, 
+      password: values.password,
+    });
+    router.push('/login');
+  } catch (err: any) {
+    // Crash se bachne ke liye safe error handling
+    const detail = err.response?.data?.detail;
+    const message = Array.isArray(detail) ? detail[0].msg : (typeof detail === 'string' ? detail : "Registration failed");
+    setError(message);
   }
+}
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#fcfaff] p-4">
