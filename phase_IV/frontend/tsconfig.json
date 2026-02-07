@@ -20,9 +20,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "lib/*": ["./src/lib/*"],
-      "components/*": ["./src/components/*"]
+      "@/*": ["src/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/components/*": ["src/components/*"]
     }
   },
   "include": [
