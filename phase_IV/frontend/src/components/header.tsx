@@ -3,7 +3,7 @@
 
 import { useAuth } from '../context/auth-context';
 import { Button } from './ui/button';
-import { cn } from '../lib/utils';
+import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { MessageCircle, LayoutDashboard } from 'lucide-react';
 
