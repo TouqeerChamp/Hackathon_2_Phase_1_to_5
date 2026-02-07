@@ -1,11 +1,6 @@
-import type { NextConfig } from "next";
-
 const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
-  // Groq ka bataya hua solution:
-  experimental: {
-  },
+  // Ye zaroori hai
+  distDir: '.next', 
 };
-
-export default nextConfig;
