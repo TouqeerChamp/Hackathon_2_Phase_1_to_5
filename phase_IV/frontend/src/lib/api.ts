@@ -8,7 +8,7 @@ import {
   ConversationMessagesResponse
 } from '../types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://mohammadtouqeer-todo-backend-phase4.hf.space';
 
 export const api: AxiosInstance = axios.create({
   baseURL: API_URL,
