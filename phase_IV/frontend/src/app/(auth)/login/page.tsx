@@ -7,7 +7,7 @@ import * as z from 'zod';
 import Link from 'next/link';
 import { useAuth } from '@/context/auth-context';
 import { api } from '@/lib/api';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -15,9 +15,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form';
-import { Input } from './ui/input';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { CheckSquare } from 'lucide-react';
 
 const formSchema = z.object({

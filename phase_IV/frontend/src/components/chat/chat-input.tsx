@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, KeyboardEvent } from 'react';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 
 interface ChatInputProps {
