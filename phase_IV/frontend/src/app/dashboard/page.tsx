@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import ProtectedRoute from '@/components/protected-route';
 import Header from '@/components/header';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import { Skeleton } from './ui/skeleton';
 import { useAuth } from '@/context/auth-context';
 import { CheckSquare, Plus, Search, Trash2, Loader2, RefreshCw, Sparkles, Edit2, X, Check } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 import { taskService } from '@/lib/api';
 import { Task } from '@/types';
 

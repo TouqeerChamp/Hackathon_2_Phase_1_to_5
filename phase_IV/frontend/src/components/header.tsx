@@ -1,11 +1,11 @@
+
 'use client';
 
-import { useAuth } from '@/context/auth-context';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { useAuth } from '../context/auth-context';
+import { Button } from './ui/button';
+import { cn } from '../lib/utils';
 import { usePathname } from 'next/navigation';
 import { MessageCircle, LayoutDashboard } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export default function Header() {
   const { user, logout } = useAuth();
