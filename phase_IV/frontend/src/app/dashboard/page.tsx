@@ -423,10 +423,11 @@ export default function DashboardPage() {
               />
             </div>
             <div className="hidden sm:flex gap-2">
-   <Button variant="ghost" onClick={() => setSearchQuery('')}>All</Button>
-   <Button variant="ghost" onClick={() => setSearchQuery(':active')}>Active</Button>
-   <Button variant="ghost" onClick={() => setSearchQuery(':completed')}>Completed</Button>
-</div>
+               <Button variant="ghost" onClick={() => setSearchQuery('')}>All</Button>
+               <Button variant="ghost" onClick={() => setSearchQuery(':active')}>Active</Button>
+               <Button variant="ghost" onClick={() => setSearchQuery(':completed')}>Completed</Button>
+            </div>
+          </div>
 
           {/* Task List / Empty State */}
           <div className="space-y-4">
