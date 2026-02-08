@@ -121,12 +121,12 @@ export default function LoginPage() {
         <CardFooter className="justify-center">
           <p className="text-sm text-slate-600 text-center">
             Don't have an account?{' '}
-            <Link
-              href="/register"
-              className="font-semibold text-purple-600 hover:underline underline-offset-4 transition-all"
-            >
-              Sign up today
-            </Link>
+            <a
+      href="/register"
+      className="font-semibold text-purple-600 hover:underline underline-offset-4 transition-all"
+    >
+      Sign up today
+    </a>
           </p>
         </CardFooter>
       </Card>
