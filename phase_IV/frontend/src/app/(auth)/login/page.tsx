@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import Link from 'next/link';
 import { useAuth } from '@/context/auth-context';
 import { api } from '@/lib/api';
 import { Button } from '@/components/ui/button';
