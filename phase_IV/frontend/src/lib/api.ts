@@ -34,10 +34,28 @@ api.interceptors.request.use(
 // --- SERVICES EXPORTS (Ye missing thay) ---
 
 export const taskService = {
-  getTasks: () => api.get<TaskListResponse>('/tasks'),
-  createTask: (data: Partial<Task>) => api.post<Task>('/tasks', data),
-  updateTask: (id: string, data: Partial<Task>) => api.put<Task>(`/tasks/${id}`, data),
-  deleteTask: (id: string) => api.delete(`/tasks/${id}`),
+  fetchTasks: async () => {
+    const response = await api.get('/tasks');
+    return { tasks: response.data };
+  },
+  addTask: async (title: string) => {
+    const response = await api.post('/tasks', { title, completed: false });
+    return response.data;
+  },
+  toggleTaskStatus: async (taskId: number) => {
+    return api.post(`/tasks/${taskId}/toggle`); 
+  },
+  updateTask: async (id: number, data: any) => {
+    const response = await api.put(`/tasks/${id}`, data);
+    return response.data;
+  },
+  deleteTask: (id: number) => api.delete(`/tasks/${id}`),
+  agentPrompt: async (prompt: string) => ({ response: "Assistant logic to be implemented" }),
+  analyzeTask: async () => ({ 
+    summary: "No analysis available", 
+    insights: [], recommendations: [], patterns: [],
+    stats: { total: 0, completed: 0, pending: 0, completion_rate: 0 }
+  }),
 };
 
 export const chatService = {
