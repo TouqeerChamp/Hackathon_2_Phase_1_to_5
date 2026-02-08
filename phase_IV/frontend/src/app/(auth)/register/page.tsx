@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -24,7 +25,7 @@ const formSchema = z.object({
   password: z.string().min(8, 'Password must be at least 8 characters'),
 });
 
-export default function RegisterPage() {
+export default function FinalRegisterPage() {
   const router = useRouter();
   const [error, setError] = useState('');
 
