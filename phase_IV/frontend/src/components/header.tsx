@@ -3,6 +3,7 @@
 
 import { useAuth } from '../context/auth-context';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { MessageCircle, LayoutDashboard } from 'lucide-react';
@@ -29,9 +30,9 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo and Nav */}
         <div className="flex items-center gap-8">
-          <a href="/dashboard" className="text-xl font-bold text-purple-700">
-            Todo App
-          </a>
+          <Link href="/dashboard" className="text-xl font-bold text-purple-700">
+  Todo App
+</Link>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-1">
@@ -40,19 +41,19 @@ export default function Header() {
               const isActive = pathname === link.href;
 
               return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
-                    isActive
-                      ? 'bg-purple-100 text-purple-700'
-                      : 'text-gray-600 hover:bg-purple-50 hover:text-purple-600'
-                  )}
-                >
-                  <Icon className="h-4 w-4" />
-                  {link.label}
-                </a>
+                <Link
+  key={link.href}
+  href={link.href}
+  className={cn(
+    'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+    isActive
+      ? 'bg-purple-100 text-purple-700'
+      : 'text-gray-600 hover:bg-purple-50 hover:text-purple-600'
+  )}
+>
+  <Icon className="h-4 w-4" />
+  {link.label}
+</Link>
               );
             })}
           </nav>
