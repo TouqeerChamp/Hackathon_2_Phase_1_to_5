@@ -29,9 +29,9 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo and Nav */}
         <div className="flex items-center gap-8">
-          <Link href="/dashboard" className="text-xl font-bold text-purple-700">
+          <a href="/dashboard" className="text-xl font-bold text-purple-700">
             Todo App
-          </Link>
+          </a>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-1">
@@ -40,7 +40,7 @@ export default function Header() {
               const isActive = pathname === link.href;
 
               return (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className={cn(
@@ -52,7 +52,7 @@ export default function Header() {
                 >
                   <Icon className="h-4 w-4" />
                   {link.label}
-                </Link>
+                </a>
               );
             })}
           </nav>
@@ -67,7 +67,7 @@ export default function Header() {
               const isActive = pathname === link.href;
 
               return (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className={cn(
@@ -79,7 +79,7 @@ export default function Header() {
                   aria-label={link.label}
                 >
                   <Icon className="h-5 w-5" />
-                </Link>
+                </a>
               );
             })}
           </div>
